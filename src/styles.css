@@ -24,8 +24,8 @@ footer {
 
 .loading-spinner {
   animation: rotation 2s infinite linear;
-  margin: 120px;
-  width: 80px;
+  margin: 240px;
+  width: 160px;
 }
 @keyframes rotation {
   from {
@@ -53,7 +53,7 @@ footer {
 
 .list-item-name {
   position: absolute;
-  color: #000;
+  color: #373;
   bottom: 0;
   width: 100%;
   text-align: center;
