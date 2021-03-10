@@ -43,6 +43,21 @@ jobs:
           healthcheck: "https://thawing-ocean-77154.herokuapp.com/health"
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
+      - name: Deployment successful Slack notification
+        if: ${{ success() && github.event_name == 'push' && !contains(join(github.event.commits.*.message), '#skip') }}
+        uses: 8398a7/action-slack@v3
+        with:
+          status: custom
+          fields: repo,commit,author,took
+          custom_payload: |
+            {
+              attachments: [{
+                color: 'good',
+                text: `A new version of ${process.env.AS_REPO} deployed to https://thawing-ocean-77154.herokuapp.com (${process.env.AS_COMMIT}) by ${process.env.AS_AUTHOR} and it only took ${process.env.AS_TOOK}.`
+              }]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
   tag_version:
     needs: simple_deployment_pipeline
     if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message), '#skip') }}
