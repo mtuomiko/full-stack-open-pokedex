@@ -1,0 +1,17 @@
+name: Periodic health check
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  periodic_health_check:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Check deployed app
+        uses: jtalk/url-health-check-action@v1.5
+        with:
+          url: https://thawing-ocean-77154.herokuapp.com/health
+          max-attempts: 5
+          retry-delay: 10s
