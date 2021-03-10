@@ -43,6 +43,15 @@ jobs:
           healthcheck: "https://thawing-ocean-77154.herokuapp.com/health"
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
+      - name: Workflow failure Slack notification
+        if: ${{ failure }}
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          author_name: 'Workflow failure'
+          fields: repo,message,commit,author,took
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       - name: Deployment successful Slack notification
         if: ${{ success() && github.event_name == 'push' && !contains(join(github.event.commits.*.message), '#skip') }}
         uses: 8398a7/action-slack@v3
