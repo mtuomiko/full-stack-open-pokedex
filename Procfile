@@ -1,1 +1,1 @@
-web: npm run bar
+web: npm run start-prod
