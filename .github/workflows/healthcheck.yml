@@ -1,9 +1,9 @@
 name: Periodic health check
 
-on:
-  schedule:
-    # Run at 21:13 UTC every day
-    - cron: '13 21 * * *'
+#on:
+#  schedule:
+#    # Run at 21:13 UTC every day
+#    - cron: '13 21 * * *'
 
 jobs:
   periodic_health_check:
