@@ -1,8 +1,10 @@
-# Full Stack open CI/CD
+# Full Stack Open CI/CD
 
-This repository is used for the CI/CD module of the Full stack open course
+Part 11 CI/CD custom repository found at [bloglist-monorepo](https://github.com/mtuomiko/bloglist-monorepo).
 
-Fork the repository to complete course exercises
+This repository is used for the CI/CD module of the [Full Stack Open](https://fullstackopen.com/) course.
+
+Fork the repository to complete course exercises.
 
 ## Commands
 
