@@ -4,7 +4,7 @@ Part 11 CI/CD custom repository found at [bloglist-monorepo](https://github.com/
 
 This repository is used for the CI/CD module of the [Full Stack Open](https://fullstackopen.com/) course.
 
-App served by Heroku at <https://thawing-ocean-77154.herokuapp.com>. Note that Heroku free dyno (container) startup might take a while.
+Application used to be hosted on Heroku free dynos under a generated app name `thawing-ocean-77154`. Currently not hosted anywhere.
 
 Fork the repository to complete course exercises.
 
